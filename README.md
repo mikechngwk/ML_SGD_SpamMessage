@@ -20,3 +20,9 @@ To run the project, you’ll need to install the following dependencies. You can
 
 ```bash
 python -m venv venv
+
+### 2. Activate the virtual environment:
+
+- On **Windows**:
+```bash
+venv\Scripts\activate
