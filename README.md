@@ -1,5 +1,3 @@
-# **ML_SGDClassifier_SpamMessages**
-
 ## **Project Description**
 
 This project demonstrates the use of machine learning to classify text messages as spam or non-spam using the SGDClassifier (Stochastic Gradient Descent Classifier) from scikit-learn. The project builds and trains a machine learning model that processes textual data, converts it into numerical features using `CountVectorizer`, and then applies a classification algorithm to predict whether a given message is spam.
