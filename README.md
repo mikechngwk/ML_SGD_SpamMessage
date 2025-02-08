@@ -20,9 +20,69 @@ To run the project, you’ll need to install the following dependencies. You can
 
 ```bash
 python -m venv venv
+```
 
 ### 2. Activate the virtual environment:
 
 - On **Windows**:
 ```bash
 venv\Scripts\activate
+```
+
+- On **macOS/Linux**:
+```bash
+source venv/bin/activate
+```
+### 3. Install the dependencies:
+Once the virtual environment is activated, run the following command to install all the required packages:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Running the Application:
+After installing the dependencies, you can run the FastAPI server with the following command:
+```bash
+uvicorn app.main:app --reload
+```
+## **How to Use**
+Once the server is running, you can interact with the API through the /predict endpoint to make predictions about text messages.
+
+## **Example Usage:**
+To predict whether a given text is spam, send a GET request to /predict with a query parameter text. For example:
+```bash
+GET http://127.0.0.1:8000/predict?text=Congratulations%20You%20won%20a%20prize!
+```
+## **Example Response:**
+```bash
+{
+    "prediction": 1,
+    "probabilities": [[0.2, 0.8]]
+}
+```
+
+## **Example Input/Output:**
+- **Input**:
+  - **Text**: "Congratulations! You've won a free prize."
+- **Output**:
+  - **Prediction**: 1 (Spam)
+  - **Probabilities**: `[[0.2, 0.8]]`
+
+
+"prediction": 1, (Spam) <br>
+"prediction": 0, (No-Spam) <br>
+"probabilities": [[X, Y]] | X = Probability of Not Spam, Y = Probability of Spam
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
