@@ -8,7 +8,8 @@ from sklearn.metrics import classification_report
 
 MODEL_FILE = "spam_model.pkl"
 VECTORIZER_FILE = "vectorizer.pkl"
-DATASET_FILE = "spam_data.xlsx"
+# DATASET_FILE = "spam_data.xlsx"
+DATASET_FILE = "spam_kaggle.xlsx"
 
 def train_model():
     """
@@ -31,10 +32,13 @@ def train_model():
     # To check if dataset has required columns for training model
     if "text" not in df.columns or "target" not in df.columns:
         raise ValueError("Dataset must have 'text' and 'target' columns!")
-
+    # Drop NaN values
+    df = df.dropna(subset=["text"])
+    # Ensure all messages are strings
+    df["text"] = df["text"].astype(str)
     X_message = df["text"]
     y_value = df["target"]
-
+    print(X_message)
     """
     Split dataset into:
     80% for training

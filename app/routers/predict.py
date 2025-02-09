@@ -26,6 +26,6 @@ def predict_spam(text: str, model_data=Depends(get_model)):
     print(f"Prediction probabilities: {probabilities}")
 
     return {
-        "prediction": int(prediction[0]),
+        "prediction": (prediction[0]),
         "probabilities": probabilities.tolist()  # Return the probabilities for further analysis
     }
